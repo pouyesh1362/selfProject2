@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const DB_URL = "mongodb://loclhost:27017/selfProject2Db";
+
+const DB_URL = "mongodb://localhost:27017/selfProject2";
 
 mongoose.connect(DB_URL,{
     useNewUrlParser : true,
@@ -12,4 +13,4 @@ mongoose.connect(DB_URL,{
 
 module.exports = {
     User: require('./User'),
-}
+};

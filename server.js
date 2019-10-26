@@ -1,15 +1,15 @@
-const express = requie('express');
 const mongoose = require('mongoose');
+const express = require('express');
 const app = express();
-
-// --------------------data Base-----------
+const bodyParser = require('body-parser');
+// // --------------------data Base-----------
 const db = require('./models');
 
 
 // <----------------MiddleWare------------------>
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 // <-----------------------Port--------------------->
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 3500;
 
 
+// ---------------------------landingPage--------
 
 
 
@@ -33,4 +34,4 @@ const PORT = process.env.PORT || 3500;
 
 
 //<------------------------listener------------>
-app.listen(PORT,()=> console.log(`server started ON http://localhost:${PORT}`));
+app.listen(PORT,()=> console.log(`server started ON http://localhost:${PORT}/`));
