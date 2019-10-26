@@ -1,0 +1,24 @@
+{
+  "name": "selfproject2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"jia you\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouyesh1362/selfProject2.git"
+  },
+  "author": "Pouyesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pouyesh1362/selfProject2/issues"
+  },
+  "homepage": "https://github.com/pouyesh1362/selfProject2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
+  }
+}
