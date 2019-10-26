@@ -1,0 +1,24 @@
+header{
+    background: red;
+    height: 40px;
+    text-align: justify;
+    color:wheat;
+}
+
+button{
+ background: blue;
+ height: 60px;
+ width: 120px;
+ margin-right: 500px;
+ margin-left: 500px;
+color: red;
+font-size: 20px;
+border-radius: 30px;
+ 
+}
+body{
+    background: bisque;
+}
+h3{
+    margin: 0;
+}

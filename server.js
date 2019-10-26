@@ -19,6 +19,16 @@ const PORT = process.env.PORT || 3500;
 
 // ---------------------------landingPage--------
 
+app.get('/landing' ,(req,res)=>{
+res.sendFile('view/landing.html' , {root:__dirname});
+
+});
+app.get('/signin',(req, res)=>{
+res.sendFile('/view/signin.html' , {root: __dirname});
+})
+app.get('/signup' ,(req , res)=>{
+res.sendFile('/view/signup.html', {root: __dirname});
+})
 
 
 
