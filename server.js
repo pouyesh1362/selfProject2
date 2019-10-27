@@ -31,6 +31,31 @@ res.sendFile('/view/signup.html', {root: __dirname});
 })
 
 
+// <------------------------------showall api-------->
+app.get('/api/v1/users' , (req,res)=>{
+db.User.find({} , (error , allusers)=>{
+    if(error) return console.log('error');
+    res.json({
+    static : 200,
+    count: allusers.length,
+    data:allusers,
+    requestAt: new Date().toLocaleDateString,
+    });
+   });
+});
+
+app.post('/api/v1/users' , (req,res)=>{
+db.User.create(req.body,(error , createdUser)=>{
+    if(error) return console.log(error);
+    res.json({
+        status:201,
+        data:createdUser,
+        requestAt: new Date().toLocaleDateString(),
+    });
+  });
+});
+
+
 
 
 
