@@ -1,6 +1,6 @@
 const db = require('../models');
 
-const show = (req,res)=>{
+const index = (req,res)=>{
     db.User.find({} , (error , allusers)=>{
         if(error) return console.log('error');
         res.json({
@@ -40,7 +40,7 @@ const update = (req, res)=>{
         });
   }
 
-  const create = (req,res)=>{
+const create = (req,res)=>{
     db.User.create(req.body,(error , createdUser)=>{
         if(error) return console.log(error);
         res.json({
@@ -51,9 +51,21 @@ const update = (req, res)=>{
       });
     }
 
+const show = (req,res)=>{
+  db.User.findById(req.params.userId , (error, foundUser)=>{
+    if (error) return console.log(error);
+  res.json({
+    status: 201,
+    count: 1,
+    data: foundUser,
+    requestAt: new Date().toLocaleString(),
+  });
+  }) ;
+}
 module.exports = {
-    show,
+    index,
     destroy,
     update,
-    create
+    create,
+    show
 }

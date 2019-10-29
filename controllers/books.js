@@ -1,6 +1,6 @@
 const db = require('../models');
 
-const show = (req ,res)=>{
+const index = (req ,res)=>{
     db.Book.find({} , (error , allBooks)=>{
       if(error) return console.log(error);
       res.json({
@@ -50,10 +50,21 @@ const show = (req ,res)=>{
         });
       });
   }
+  const show = (req,res)=>{
+    db.Book.findById(req.params.bookId, (error, bookfound)=>{
+      if(error) return console.log(error);
+      res.json({
+        status: 201,
+        data: bookfound,
+        requestAt: new Date().toLocaleString()
+      });
+    });
+  }
 
   module.exports = {
       show,
       destroy,
       update,
-      create
+      create,
+      index
   }
