@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const db = require('./models');
 const routes = require('./routes');
 
-
+const session = require('express-session');
 // <----------------MiddleWare------------------>
 
 app.use(express.static('public'));
@@ -18,7 +18,14 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 3500;
 
 
-// ---------------------------landingPage--------
+
+app.use (session({
+    secret:'work hard',
+    resave :true ,
+    saveUninitialized: false,
+}));
+
+
 
 
 

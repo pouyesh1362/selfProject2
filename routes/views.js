@@ -18,4 +18,9 @@ router.get('/landing' ,(req,res)=>{
 });
 });
 
+router.get('/browse', (req,res) =>{
+    res.sendFile('/view/browse.html',{root:`${__dirname}/../`,
+});
+});
+
     module.exports = router;
